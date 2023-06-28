@@ -1,6 +1,7 @@
 <template>
 
     <div class="bar">
+        <button @click="sortPrice">Sort by Price</button>
         <a id="btnFilter" href="">All</a>
         <a id="btnFilter" href="">Hats</a>
         <a id="btnFilter" href="">Pants</a>
@@ -14,6 +15,11 @@
 <script>
 import CardComp from '@/components/Card-Comp.vue'
 export default {
+    methods: {
+        sortPrice(){
+            this.$store.commit("sortPropertiesByPrice")
+        },
+    },
     computed:{
         products(){
             return this.$store.state.products

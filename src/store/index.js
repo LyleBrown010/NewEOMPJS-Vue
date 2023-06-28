@@ -4,6 +4,7 @@ export default createStore({
   state: {
     products: null,
     product: null,
+    asc: true,
   },
 
   mutations: {
@@ -13,7 +14,17 @@ export default createStore({
     setProduct: (state, product) => {
       state.product = product;
     },
+    sortPropertiesByPrice: (state) => {
+      state.products.sort((a, b) => {
+        return a.price - b.price; 
+      });
+      if (!state.asc) {
+        state.products.reverse();
+      }
+      state.asc = !state.asc;
+    },
   },
+
   actions: {
     getProducts: async(context) => {
       fetch("http://localhost:3000/products")
