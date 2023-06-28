@@ -2,10 +2,16 @@
 
     <div class="bar">
         <button @click="sortPrice">Sort by Price</button>
-        <a id="btnFilter" href="">All</a>
+        <select v-model="category">
+            <option value="all">ALL</option>
+            <option value="hats">HATS</option>
+            <option value="pants">PANTS</option>
+            <option value="jumpers">JUMPERS</option>
+        </select>
+        <!-- <a id="btnFilter" href="">All</a>
         <a id="btnFilter" href="">Hats</a>
         <a id="btnFilter" href="">Pants</a>
-        <a id="btnFilter" href="">Jumpers</a>
+        <a id="btnFilter" href="">Jumpers</a> -->
     </div><br>
     <div v-if="products" class="flex-container" id="products">
         <CardComp v-for="product of products" :key="product.id" :product="product"/>
@@ -22,7 +28,13 @@ export default {
     },
     computed:{
         products(){
-            return this.$store.state.products
+            return this.$store.state.products?.filter((product) => {
+                let isMatch = true; 
+                if(this.category !== "all" && this.category !== product.category){
+                    isMatch = false
+                }
+                return isMatch
+            })
         }
     },
     mounted(){
