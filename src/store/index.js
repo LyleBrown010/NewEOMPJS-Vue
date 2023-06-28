@@ -12,7 +12,7 @@ export default createStore({
     },
     setProduct: (state, product) => {
       state.product = product;
-    }
+    },
   },
   actions: {
     getProducts: async(context) => {

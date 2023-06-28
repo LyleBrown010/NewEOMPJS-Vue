@@ -19,5 +19,11 @@ export default {
         this.$store.dispatch("getProduct", this.id)
     }
     
-}
+};
 </script>
+<style scoped>
+.product-details{
+    border: 2px solid black;
+    border-radius: 12px;
+}    
+</style>
