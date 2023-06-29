@@ -1,7 +1,7 @@
 <template>
 
     <div class="bar">
-        <button @click="sortPrice">Sort by Price</button>
+        <button id="btnSort" @click="sortPrice">Sort by Price</button>
         <select v-model="category">
             <option value="All">All</option>
             <option value="Hats">Hats</option>
@@ -51,6 +51,7 @@ export default {
     display: grid;
     grid-template-columns: auto auto auto; 
     justify-content: space-evenly;
+    
 }
 
 .bar{
@@ -59,23 +60,28 @@ export default {
     width: 50%;
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-evenly;
     margin: auto;
+    
     
 }
 
-#btnFilter{
-    text-decoration: none;
-    color: black;
-    padding: 5px;
-
-}
 
 img{
     border-radius: 12px;
     margin: 5px;
 }
 
+#btnSort{
+    background-color: #ffd230;
+    border: none;
+    margin: 5px;
+}
+
+select{
+    background-color: #ffd230;
+    border: none;
+}
 
 
 </style>

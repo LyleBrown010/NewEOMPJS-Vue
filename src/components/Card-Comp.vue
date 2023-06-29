@@ -20,6 +20,7 @@ export default {
     border: 2px solid black;
     border-radius: 12px; 
     height: 350px; 
+    margin: 5%;
 }
 
 #btnAddToCart{
