@@ -1,10 +1,10 @@
 <template>
     <router-link :to="{name: 'product', params:{id: product.id}}" id="card" >
         <div class="row">
-            <div class="col-6" id="card-product">
+            <div class="" id="card-product">
                 <img :src="product.image" :alt="product.name">
-                <h3>{{product.name}}</h3>
-                <p>Price: R {{product.price}}</p>
+                <h3 class="text-black">{{product.name}}</h3>
+                <p class="text-black">Price: R {{product.price}}</p>
                 <button id="btnAddToCart">Add to Cart</button>
             </div>
         </div>
@@ -27,4 +27,6 @@ export default {
     border-radius: 12px;
     margin-bottom: 7px;
 }
+
+
 </style>

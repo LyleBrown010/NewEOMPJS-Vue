@@ -3,15 +3,11 @@
     <div class="bar">
         <button @click="sortPrice">Sort by Price</button>
         <select v-model="category">
-            <option value="all">ALL</option>
-            <option value="hats">HATS</option>
-            <option value="pants">PANTS</option>
-            <option value="jumpers">JUMPERS</option>
+            <option value="All">All</option>
+            <option value="Hats">Hats</option>
+            <option value="Pants">Pants</option>
+            <option value="Jumpers">Jumpers</option>
         </select>
-        <!-- <a id="btnFilter" href="">All</a>
-        <a id="btnFilter" href="">Hats</a>
-        <a id="btnFilter" href="">Pants</a>
-        <a id="btnFilter" href="">Jumpers</a> -->
     </div><br>
     <div v-if="products" class="flex-container" id="products">
         <CardComp v-for="product of products" :key="product.id" :product="product"/>
@@ -21,6 +17,12 @@
 <script>
 import CardComp from '@/components/Card-Comp.vue'
 export default {
+    data() {
+        return {
+            category: "All"
+            
+        }
+    },
     methods: {
         sortPrice(){
             this.$store.commit("sortPropertiesByPrice")
@@ -30,7 +32,7 @@ export default {
         products(){
             return this.$store.state.products?.filter((product) => {
                 let isMatch = true; 
-                if(this.category !== "all" && this.category !== product.category){
+                if (this.category !== "All" && this.category !== product.category){
                     isMatch = false
                 }
                 return isMatch
@@ -47,7 +49,8 @@ export default {
 <style>
 #products{
     display: grid;
-    grid-template-columns: auto auto; 
+    grid-template-columns: auto auto auto; 
+    justify-content: space-evenly;
 }
 
 .bar{
@@ -66,6 +69,11 @@ export default {
     color: black;
     padding: 5px;
 
+}
+
+img{
+    border-radius: 12px;
+    margin: 5px;
 }
 
 

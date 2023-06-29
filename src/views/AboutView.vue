@@ -11,8 +11,8 @@
           garments that not only look good but also stand the test of time.</p>
       </div>
       <div class="col-7" id="image-section">
-        <div class=""><img src="https://i.postimg.cc/85QL9Rxx/artem-gavrysh-F6-U5f-GAOik-unsplash.jpg" alt=""
-            style="width: 100%;"></div>
+        <img  src="https://i.postimg.cc/85QL9Rxx/artem-gavrysh-F6-U5f-GAOik-unsplash.jpg" alt=""
+            style="width: 100%; height: 100%">
       </div>
     </div>
 </template>
@@ -41,5 +41,6 @@ img{
   display: flex;
   justify-items: center;
 }
+
   
 </style>
