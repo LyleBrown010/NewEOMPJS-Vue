@@ -21,12 +21,14 @@ export default {
     border-radius: 12px; 
     height: 350px; 
     margin: 5%;
+    background-color: white;
 }
 
 #btnAddToCart{
     padding: 5px;
     border-radius: 12px;
     margin-bottom: 7px;
+    background-color: #ffd23f;
 }
 
 

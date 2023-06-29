@@ -5,8 +5,25 @@
         <router-link to="/contact" id="nav-item">Contact</router-link>
         <router-link to="/products" id="nav-item">Products</router-link>
         <router-link to="/admin" id="nav-item">Admin</router-link>
-        <router-link to="/cart" id="nav-item">Cart</router-link>
+        <router-link to="/cart"  id="nav-item" data-bs-toggle="modal" data-bs-target="#myModal">Cart</router-link>
     </nav>
+    <div class="modal" id="myModal">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Added Items</h4>
+            <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+          </div>
+          <div id="cartContainer">
+          </div>
+          <div class="modal-footer">
+            <p>Total: <span id="total"></span></p>
+            <button onclick="checkout()"><a href="/html/checkout.html"></a>Proceed to checkout</button>
+
+          </div>
+        </div>
+      </div>
+    </div>
 </template>
 <script>
 export default {

@@ -1,5 +1,6 @@
 <template>
-
+<div class="main">
+    <br>
     <div class="bar">
         <button id="btnSort" @click="sortPrice">Sort by Price</button>
         <select v-model="category">
@@ -13,6 +14,7 @@
         <CardComp v-for="product of products" :key="product.id" :product="product"/>
     </div>
     <div v-else>Loading.. .. . . . . . ... . ... </div>
+</div>
 </template>
 <script>
 import CardComp from '@/components/Card-Comp.vue'
@@ -51,7 +53,7 @@ export default {
     display: grid;
     grid-template-columns: auto auto auto; 
     justify-content: space-evenly;
-    
+
 }
 
 .bar{
@@ -83,5 +85,8 @@ select{
     border: none;
 }
 
+.main{
+    background-color: #FFEEB3;
+}
 
 </style>
